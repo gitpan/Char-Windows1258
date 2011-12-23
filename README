@@ -213,5 +213,5 @@ See also code table:
 
 SEE ALSO
 
-perl, Sjis.pm
+perl, Windows1258.pm, Ewindows1258.pm, jacode.pl
 
