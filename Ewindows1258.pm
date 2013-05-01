@@ -28,7 +28,7 @@ BEGIN {
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.87 $ =~ /(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.88 $ =~ /(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -386,7 +386,6 @@ sub Windows1258::rindex($$;$);
 # Character class
 #
 BEGIN { eval q{ use vars qw(
-    $anchor
     $dot
     $dot_s
     $eD
@@ -415,7 +414,7 @@ BEGIN { eval q{ use vars qw(
     $eb
     $eB
 ) } }
-${Ewindows1258::anchor}      = qr{\G(?:[\x00-\xFF])*?};
+
 ${Ewindows1258::dot}         = qr{(?:[^\x0A])};
 ${Ewindows1258::dot_s}       = qr{(?:[\x00-\xFF])};
 ${Ewindows1258::eD}          = qr{(?:[^0-9])};
@@ -451,6 +450,35 @@ ${Ewindows1258::not_word}    = qr{(?:[^\x30-\x39\x41-\x5A\x5F\x61-\x7A])};
 ${Ewindows1258::not_xdigit}  = qr{(?:[^\x30-\x39\x41-\x46\x61-\x66])};
 ${Ewindows1258::eb}          = qr{(?:\A(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[0-9A-Z_a-z])|(?<=[0-9A-Z_a-z])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]|\z))};
 ${Ewindows1258::eB}          = qr{(?:(?<=[0-9A-Z_a-z])(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]))};
+
+# avoid: Name "Ewindows1258::foo" used only once: possible typo at here.
+${Ewindows1258::dot}         = ${Ewindows1258::dot};
+${Ewindows1258::dot_s}       = ${Ewindows1258::dot_s};
+${Ewindows1258::eD}          = ${Ewindows1258::eD};
+${Ewindows1258::eS}          = ${Ewindows1258::eS};
+${Ewindows1258::eW}          = ${Ewindows1258::eW};
+${Ewindows1258::eH}          = ${Ewindows1258::eH};
+${Ewindows1258::eV}          = ${Ewindows1258::eV};
+${Ewindows1258::eR}          = ${Ewindows1258::eR};
+${Ewindows1258::eN}          = ${Ewindows1258::eN};
+${Ewindows1258::not_alnum}   = ${Ewindows1258::not_alnum};
+${Ewindows1258::not_alpha}   = ${Ewindows1258::not_alpha};
+${Ewindows1258::not_ascii}   = ${Ewindows1258::not_ascii};
+${Ewindows1258::not_blank}   = ${Ewindows1258::not_blank};
+${Ewindows1258::not_cntrl}   = ${Ewindows1258::not_cntrl};
+${Ewindows1258::not_digit}   = ${Ewindows1258::not_digit};
+${Ewindows1258::not_graph}   = ${Ewindows1258::not_graph};
+${Ewindows1258::not_lower}   = ${Ewindows1258::not_lower};
+${Ewindows1258::not_lower_i} = ${Ewindows1258::not_lower_i};
+${Ewindows1258::not_print}   = ${Ewindows1258::not_print};
+${Ewindows1258::not_punct}   = ${Ewindows1258::not_punct};
+${Ewindows1258::not_space}   = ${Ewindows1258::not_space};
+${Ewindows1258::not_upper}   = ${Ewindows1258::not_upper};
+${Ewindows1258::not_upper_i} = ${Ewindows1258::not_upper_i};
+${Ewindows1258::not_word}    = ${Ewindows1258::not_word};
+${Ewindows1258::not_xdigit}  = ${Ewindows1258::not_xdigit};
+${Ewindows1258::eb}          = ${Ewindows1258::eb};
+${Ewindows1258::eB}          = ${Ewindows1258::eB};
 
 #
 # Windows-1258 split
