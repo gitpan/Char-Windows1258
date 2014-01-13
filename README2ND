@@ -1,14 +1,12 @@
 NAME
 
-       Char::Windows1258 - Source code filter for Windows-1258 script (Imitation JPerl)
+       Windows1258 - Source code filter for Windows-1258 script (Imitation JPerl)
 
 SYNOPSIS
 
     In your script:
 
-      use Char::Windows1258; # CPAN formal style
-         or
-      use Windows1258; # casual style
+      use Windows1258;
 
     At command prompt:
 
